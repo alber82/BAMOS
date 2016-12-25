@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".controlador.MainActivity">
+    <item
+        android:id="@+id/action_back"
+        android:title="Añadir"
+        android:icon="@drawable/ic_arrow_back_white_36dp"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_done"
+        android:title="Añadir"
+        android:icon="@drawable/ic_done_white_36dp"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_details"
+        android:title="Detalles"
+        android:icon="@drawable/ic_description_white_36dp"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_email"
+        android:title="Enviar Email"
+        android:orderInCategory="98"
+        android:icon="@drawable/ic_email_white_36dp"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_pdf"
+        android:title="Generar PDF"
+        android:orderInCategory="99"
+        android:icon="@drawable/ic_content_paste_white_36dp"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_delete_video"
+        android:title="Eliminar Video"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_help"
+        android:title="Ayuda"
+        android:orderInCategory="102"
+        android:icon="@drawable/ic_help_white_24dp"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_about"
+        android:title="Acerca de"
+        android:orderInCategory="103"
+        android:icon="@drawable/ic_help_white_24dp"
+        app:showAsAction="never"/>
+
+
+</menu>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent" >
+
+<SurfaceView
+    android:id="@+id/surfaceCamera"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+    <include layout="@layout/record_left_layout"/>
+    <include layout="@layout/record_right_layout"/>
+
+    <TextView
+        android:id="@+id/tvcor"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="COORD"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignLeft="@+id/btnCaptureVideo"
+        android:layout_alignStart="@+id/btnCaptureVideo" />
+
+    <Spinner
+        android:id="@+id/spcor"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:entries="@array/coord"
+        android:background="@color/PrimaryColorTransp"
+        android:popupBackground="@color/PrimaryColor"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/tvcor"
+        android:layout_toRightOf="@+id/tvcor"
+        android:layout_toEndOf="@+id/tvcor" />
+
+    <TextView
+        android:id="@+id/tvti"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="TR.IN."
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_marginRight="20dp"
+        android:layout_alignTop="@+id/spcor"
+        android:layout_toLeftOf="@+id/tvContador"
+        android:layout_toStartOf="@+id/tvContador" />
+
+    <Spinner
+        android:id="@+id/spti"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:entries="@array/ti"
+        android:background="@color/PrimaryColorTransp"
+        android:popupBackground="@color/PrimaryColor"
+        android:spinnerMode="dropdown"
+        android:layout_marginRight="20dp"
+        android:layout_alignTop="@+id/tvti"
+        android:layout_toRightOf="@+id/tvti"
+        android:layout_toEndOf="@+id/tvti" />
+
+    <TextView
+        android:id="@+id/tvtail"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="TAIL"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_marginRight="20dp"
+        android:layout_alignTop="@+id/spti"
+        android:layout_toRightOf="@+id/spti"
+        android:layout_toEndOf="@+id/spti" />
+
+    <Spinner
+        android:id="@+id/sptail"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:entries="@array/tail"
+        android:background="@color/PrimaryColorTransp"
+        android:popupBackground="@color/PrimaryColor"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/tvtail"
+        android:layout_toRightOf="@+id/tvtail"
+        android:layout_toEndOf="@+id/tvtail" />
+
+    <Button
+        android:id="@+id/btnCaptureVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COMENZAR GRABAR"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/tvti"
+        android:layout_toStartOf="@+id/tvti" />
+
+
+    <Button
+        android:id="@+id/btn_guardar_estudio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar Estudio"
+        android:layout_marginLeft="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:background="@color/PrimaryColorTransp"
+        android:textSize="28sp"
+        android:id="@+id/tvContador"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SALIR"
+        android:id="@+id/btn_exit"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/sptail" />
+
+
+</RelativeLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        android:id="@+id/chronometer"
+        android:layout_below="@+id/spinner1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTRO"
+            android:padding="8dp"
+            android:textColor="#fff"
+            android:background="@color/PrimaryColor"
+            android:textSize="28sp"
+            android:id="@+id/textView"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>-->

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rrlayout"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvamr"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="Ank Mov"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/white"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"  />
+
+    <Spinner
+        android:id="@+id/spamr"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:entries="@array/am"
+        android:background="@color/whiteTransp"
+        android:popupBackground="@color/white"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/tvamr"
+        android:layout_toLeftOf="@+id/tvamr"
+        android:layout_toStartOf="@+id/tvamr" />
+
+    <TextView
+        android:id="@+id/tvpwor"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="Plantar   W/O"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/white"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_below="@+id/tvamr"
+        android:layout_alignRight="@+id/tvamr"
+        android:layout_marginTop="20dp" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/swpwor"
+        android:layout_alignBottom="@+id/tvpwor"
+        android:layout_toLeftOf="@+id/tvamr"
+        android:layout_alignLeft="@+id/spamr"
+        android:layout_alignTop="@+id/tvpwor"/>
+
+    <TextView
+        android:id="@+id/tvpwr"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="Plantar With"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/white"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_below="@+id/tvpwor"
+        android:layout_alignRight="@+id/tvpwor"
+        android:layout_marginTop="20dp" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/swpwr"
+        android:layout_alignBottom="@+id/tvpwr"
+        android:layout_toLeftOf="@+id/tvamr"
+        android:layout_alignLeft="@+id/spamr"
+        android:layout_alignTop="@+id/tvpwr"/>
+
+    <TextView
+        android:id="@+id/tvsdr"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="SD R"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_below="@+id/tvpwr"
+        android:layout_alignRight="@+id/tvpwr"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible" />
+
+    <Spinner
+        android:id="@+id/spsdrT"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:entries="@array/stepd"
+        android:background="@color/PrimaryColorTransp"
+        android:popupBackground="@color/PrimaryColor"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/tvsdr"
+        android:layout_alignRight="@+id/swpwr"
+
+        android:visibility="invisible" />
+
+
+    <TextView
+        android:id="@+id/tvspr"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="SP R"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tvsdr"
+        android:layout_alignRight="@+id/tvsdr"
+        android:visibility="invisible" />
+
+
+    <Spinner
+        android:id="@+id/spsprT"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:entries="@array/stepp"
+        android:background="@color/PrimaryColorTransp"
+        android:popupBackground="@color/PrimaryColor"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/tvspr"
+        android:layout_alignRight="@+id/swpwr"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tvppicr"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="PIC R"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tvspr"
+        android:layout_alignRight="@+id/tvspr"
+        android:visibility="invisible" />
+
+
+    <Spinner
+        android:id="@+id/spppicrT"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:entries="@array/pp"
+        android:background="@color/PrimaryColorTransp"
+        android:popupBackground="@color/PrimaryColor"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/tvppicr"
+        android:layout_alignRight="@+id/spspr"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tvpplor"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="PLO R"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tvppicr"
+        android:layout_alignLeft="@+id/tvppicr"
+        android:layout_alignStart="@+id/tvppicr"
+        android:visibility="invisible" />
+
+
+    <Spinner
+        android:id="@+id/sppplorT"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:entries="@array/pp"
+        android:background="@color/PrimaryColorTransp"
+        android:popupBackground="@color/PrimaryColor"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/tvpplor"
+        android:layout_alignLeft="@+id/spppicr"
+        android:layout_alignStart="@+id/spppicr"
+        android:visibility="invisible" />
+
+</RelativeLayout>

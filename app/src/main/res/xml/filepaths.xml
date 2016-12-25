@@ -1,0 +1,7 @@
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <files-path name="videos" path="videos/"/>
+    <files-path  name="raiz" path=""/>
+    <files-path  name="temp" path="temp/"/>
+    <cache-path  name="cache" path=""/>
+    <external-path name="name" path="path" />
+</paths>

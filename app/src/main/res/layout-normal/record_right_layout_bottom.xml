@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rrlayout_bottom"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvsdr"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="Step Dorsal"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/white"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="18dp" />
+
+    <Spinner
+        android:id="@+id/spsdr"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:entries="@array/stepd"
+        android:background="@color/whiteTransp"
+        android:popupBackground="@color/white"
+        android:spinnerMode="dropdown"
+
+        android:layout_marginEnd="20dp"
+        android:layout_above="@+id/tvspr"
+        android:layout_toStartOf="@+id/tvsdr" />
+
+
+    <TextView
+        android:id="@+id/tvspr"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="Step Plantar"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/white"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/tvsdr"
+        android:layout_alignRight="@+id/tvsdr" />
+
+
+    <Spinner
+        android:id="@+id/spspr"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:entries="@array/stepp"
+        android:background="@color/whiteTransp"
+        android:popupBackground="@color/white"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/tvspr"
+        android:layout_alignStart="@+id/spsdr" />
+
+    <TextView
+        android:id="@+id/tvppicr"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="Paw Pos I.C."
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/white"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/tvspr"
+        android:layout_alignRight="@+id/tvspr" />
+
+
+    <Spinner
+        android:id="@+id/spppicr"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:entries="@array/pp"
+        android:background="@color/whiteTransp"
+        android:popupBackground="@color/white"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/tvppicr"
+        android:layout_alignRight="@+id/spspr" />
+
+    <TextView
+        android:id="@+id/tvpplor"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="Paw Pos L.O."
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/white"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/tvppicr"
+        android:layout_alignLeft="@+id/tvppicr"
+        android:layout_alignStart="@+id/tvppicr" />
+
+
+    <Spinner
+        android:id="@+id/sppplor"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:entries="@array/pp"
+        android:background="@color/whiteTransp"
+        android:popupBackground="@color/white"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/tvpplor"
+        android:layout_alignLeft="@+id/spppicr"
+        android:layout_alignStart="@+id/spppicr" />
+
+    <Spinner
+        android:id="@+id/spinnerT"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:entries="@array/am"
+        android:background="@color/whiteTransp"
+        android:popupBackground="@color/white"
+        android:spinnerMode="dropdown"
+        android:layout_marginRight="87dp"
+        android:layout_below="@+id/sppplor"
+        android:layout_alignStart="@+id/sppplor"
+        android:layout_marginTop="19dp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="AM R"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_marginRight="87dp"
+        android:layout_alignTop="@+id/spinnerT"
+        android:layout_alignStart="@+id/tvpplor"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="PW R"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/textView8"
+        android:layout_toEndOf="@+id/spsdr"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="PWO R"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_marginRight="87dp"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/textView9"
+        android:layout_toEndOf="@+id/spsdr"
+        android:visibility="invisible" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch3T"
+        android:layout_marginRight="87dp"
+        android:checked="false"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignStart="@+id/spti"
+        android:visibility="invisible" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch2T"
+        android:layout_marginRight="87dp"
+        android:checked="false"
+        android:layout_alignTop="@+id/textView9"
+        android:layout_alignStart="@+id/switch3T"
+        android:visibility="invisible" />
+
+</RelativeLayout>

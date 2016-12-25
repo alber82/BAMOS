@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="PrimaryColor">#009688</color>
+    <color name="PrimaryColorTransp">#80009688</color>
+    <color name="PrimaryDarkColor">#1976D2</color>
+    <color name="grey">#33C3C3C3</color>
+    <color name="white">#FFFFFF</color>
+    <color name="whiteTransp">#80FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="greypopup">#C3C3C3</color>
+</resources>
+<!--802196F3-->

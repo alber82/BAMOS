@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fake_action_bar"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:minHeight="?attr/actionBarSize"
+    app:navigationIcon="@drawable/ic_arrow_back_white_36dp"
+    android:background="@color/PrimaryColor"
+    app:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />

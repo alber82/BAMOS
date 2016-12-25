@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".controlador.MainActivity">
+
+    <item
+        android:id="@+id/action_done"
+        android:title="Aceptar"
+        android:icon="@drawable/ic_done_white_36dp"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_record"
+        android:title="Grabar"
+        android:icon="@drawable/ic_fiber_manual_record_white_36dp"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_back"
+        android:title="Añadir"
+        android:icon="@drawable/ic_arrow_back_white_36dp"
+        app:showAsAction="ifRoom"/>
+    <!--  <item
+          android:id="@+id/action_help"
+          android:title="Ayuda"
+          android:icon="@drawable/ic_help_white_24dp"
+          app:showAsAction="never"/>-->
+    <item
+        android:id="@+id/action_about"
+        android:title="Acerca de"
+        android:icon="@drawable/ic_help_white_24dp"
+        app:showAsAction="never"/>
+
+</menu>

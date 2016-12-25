@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:checked="false"
+            android:icon="@drawable/ic_home_black_36dp"
+            android:title="@string/home_string" />
+        <item
+            android:id="@+id/animals"
+            android:checked="false"
+            android:icon="@drawable/ic_pets_black_36dp"
+            android:title="@string/animals_string" />
+        <item
+            android:id="@+id/studies"
+            android:checked="false"
+            android:icon="@drawable/ic_search_black_36dp"
+            android:title="@string/studies_string" />
+        <item
+            android:id="@+id/settings"
+            android:checked="false"
+            android:icon="@drawable/ic_content_paste_black_36dp"
+            android:title="@string/setting_string" />
+    <!--    <item
+            android:id="@+id/record"
+            android:checked="false"
+            android:icon="@drawable/ic_videocam_black_36dp"
+            android:title="@string/record_string" />-->
+    </group>
+</menu>

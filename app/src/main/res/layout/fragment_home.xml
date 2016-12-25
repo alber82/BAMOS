@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Codirector: MANUEL NIETO DIAZ"
+        android:id="@+id/textView3"
+        android:layout_marginBottom="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/textView4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Director: ENRIQUE ARIAS ANTUNEZ"
+        android:id="@+id/textView4"
+        android:layout_above="@+id/textView3"
+        android:layout_alignStart="@+id/textView5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Alumno: ALBERTO GOMEZ GONZALEZ"
+        android:id="@+id/textView5"
+        android:layout_above="@+id/textView4"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="52dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="EVALUACION DEL COMPORTAMIENTO DE RATAS/RATONES"
+        android:id="@+id/textView6"
+        android:layout_above="@+id/textView5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="106dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageESIAB"
+        android:src="@drawable/logo_esii"
+        android:layout_alignTop="@+id/imageSESCAM"
+        android:layout_alignBottom="@+id/imageSESCAM" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageSESCAM"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/textView3"
+        android:layout_marginTop="96dp"
+        android:src="@drawable/sescam" />
+</RelativeLayout>

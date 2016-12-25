@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rllayout"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvaml"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="AM L"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:id="@+id/spaml"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:entries="@array/am"
+        android:background="@color/PrimaryColorTransp"
+        android:popupBackground="@color/PrimaryColor"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/tvaml"
+        android:layout_toRightOf="@+id/tvaml"
+        android:layout_toEndOf="@+id/tvaml" />
+
+
+    <TextView
+        android:id="@+id/tvpwol"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="PWO L"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_below="@+id/tvaml"
+        android:layout_alignLeft="@+id/tvaml"
+        android:layout_alignStart="@+id/tvaml"
+        android:layout_marginTop="20dp" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/swpwol"
+        android:layout_alignBottom="@+id/tvpwol"
+        android:layout_toRightOf="@+id/tvaml"
+        android:layout_alignRight="@+id/spaml"
+        android:layout_alignEnd="@+id/spaml"
+        android:layout_alignTop="@+id/tvpwol" />
+
+    <TextView
+        android:id="@+id/tvpwl"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="PW L"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_below="@+id/tvpwol"
+        android:layout_alignLeft="@+id/tvpwol"
+        android:layout_alignStart="@+id/tvpwol"
+        android:layout_marginTop="20dp" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/swpwl"
+        android:layout_alignBottom="@+id/tvpwl"
+        android:layout_toRightOf="@+id/tvaml"
+        android:layout_alignRight="@+id/spaml"
+        android:layout_alignEnd="@+id/spaml"
+        android:layout_alignTop="@+id/tvpwl" />
+
+    <TextView
+        android:id="@+id/tvsdl"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="SD L"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_below="@+id/tvpwl"
+        android:layout_alignLeft="@+id/tvpwl"
+        android:layout_alignStart="@+id/tvpwl"
+        android:layout_marginTop="20dp"/>
+
+    <Spinner
+        android:id="@+id/spsdl"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:entries="@array/stepd"
+        android:background="@color/PrimaryColorTransp"
+        android:popupBackground="@color/PrimaryColor"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/tvsdl"
+        android:layout_alignLeft="@+id/swpwl"
+        android:layout_alignStart="@+id/swpwl"
+        />
+
+
+    <TextView
+        android:id="@+id/tvspl"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="SP L"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tvsdl"
+        android:layout_alignLeft="@+id/tvsdl"
+        android:layout_alignStart="@+id/tvsdl" />
+
+
+    <Spinner
+        android:id="@+id/spspl"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:entries="@array/stepp"
+        android:background="@color/PrimaryColorTransp"
+        android:popupBackground="@color/PrimaryColor"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/tvspl"
+        android:layout_alignLeft="@+id/swpwl"
+        android:layout_alignStart="@+id/swpwl" />
+
+    <TextView
+        android:id="@+id/tvppicl"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="PIC L"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tvspl"
+        android:layout_alignLeft="@+id/tvspl"
+        android:layout_alignStart="@+id/tvspl" />
+
+
+    <Spinner
+        android:id="@+id/spppicl"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:entries="@array/pp"
+        android:background="@color/PrimaryColorTransp"
+        android:popupBackground="@color/PrimaryColor"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/tvppicl"
+        android:layout_alignLeft="@+id/spspl"
+        android:layout_alignStart="@+id/spspl" />
+
+    <TextView
+        android:id="@+id/tvpplol"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="PLO L"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/PrimaryColorTransp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tvppicl"
+        android:layout_alignLeft="@+id/tvppicl"
+        android:layout_alignStart="@+id/tvppicl" />
+
+
+    <Spinner
+        android:id="@+id/sppplol"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:entries="@array/pp"
+        android:background="@color/PrimaryColorTransp"
+        android:popupBackground="@color/PrimaryColor"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/tvpplol"
+        android:layout_alignLeft="@+id/spppicl"
+        android:layout_alignStart="@+id/spppicl" />
+
+</RelativeLayout>

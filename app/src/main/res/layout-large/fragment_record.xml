@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent" >
+
+<SurfaceView
+    android:id="@+id/surfaceCamera"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+    <include layout="@layout/record_left_layout"/>
+    <include layout="@layout/record_right_layout"
+  />
+    <include layout="@layout/record_left_layout_bottom"/>
+    <include layout="@layout/record_right_layout_bottom"
+        />
+
+    <Spinner
+        android:id="@+id/spti"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:entries="@array/ti"
+        android:background="@color/whiteTransp"
+        android:popupBackground="@color/white"
+        android:spinnerMode="dropdown"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:drawableEnd="@drawable/abc_spinner_mtrl_am_alpha"
+        android:layout_alignStart="@+id/tvContador"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:id="@+id/tvtail"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="TAIL"
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/white"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginRight="20dp"
+        android:layout_alignTop="@+id/spti"
+        android:layout_toRightOf="@+id/spti"
+        android:layout_toEndOf="@+id/spti" />
+
+    <Spinner
+        android:id="@+id/sptail"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:entries="@array/tail"
+        android:background="@color/whiteTransp"
+        android:popupBackground="@color/white"
+        android:spinnerMode="dropdown"
+        android:drawableEnd="@drawable/abc_spinner_mtrl_am_alpha"
+        android:layout_alignTop="@+id/tvtail"
+        android:layout_toRightOf="@+id/tvtail"
+        android:layout_toEndOf="@+id/tvtail" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:background="@color/whiteTransp"
+        android:textSize="28sp"
+        android:id="@+id/tvContador"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="Coordinat."
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/white"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginRight="20dp"
+        android:layout_alignTop="@+id/spcor"
+        android:layout_toStartOf="@+id/spcor"
+        android:layout_marginEnd="20dp" />
+
+    <Spinner
+        android:id="@+id/spcor"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:entries="@array/coord"
+        android:background="@color/whiteTransp"
+        android:popupBackground="@color/white"
+        android:spinnerMode="dropdown"
+        android:layout_marginLeft="20dp"
+        android:layout_alignTop="@+id/textView15"
+        android:layout_toStartOf="@+id/textView15"
+        android:drawableEnd="@drawable/abc_spinner_mtrl_am_alpha"
+        android:layout_marginEnd="20dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="Trunk In."
+        android:textAlignment="center"
+        android:gravity="center_vertical|right"
+        android:background="@color/white"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginRight="20dp"
+        android:layout_alignTop="@+id/spti"
+        android:layout_toStartOf="@+id/spti"
+        android:layout_marginEnd="20dp" />
+
+    <Button
+        android:id="@+id/btnCaptureVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PARAR"
+        android:layout_marginRight="20dp"
+        android:layout_alignTop="@+id/textView14"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp" />
+
+</RelativeLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        android:id="@+id/chronometer"
+        android:layout_below="@+id/spinner1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTRO"
+            android:padding="8dp"
+            android:textColor="#fff"
+            android:background="@color/PrimaryColor"
+            android:textSize="28sp"
+            android:id="@+id/textView"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>-->
