@@ -5,34 +5,34 @@
     tools:context=".controlador.MainActivity">
     <item
         android:id="@+id/action_back"
-        android:title="Añadir"
+        android:title="@string/add_string"
         android:icon="@drawable/ic_arrow_back_white_36dp"
         app:showAsAction="always"/>
     <item
         android:id="@+id/action_done"
-        android:title="Añadir"
+        android:title="@string/add_string"
         android:icon="@drawable/ic_done_white_36dp"
         app:showAsAction="always"/>
     <item
         android:id="@+id/action_details"
-        android:title="Detalles"
+        android:title="@string/details_string"
         android:icon="@drawable/ic_description_white_36dp"
         app:showAsAction="always"/>
     <item
         android:id="@+id/action_email"
-        android:title="Enviar Email"
+        android:title="@string/send_email_string"
         android:orderInCategory="98"
         android:icon="@drawable/ic_email_white_36dp"
         app:showAsAction="never"/>
     <item
         android:id="@+id/action_pdf"
-        android:title="Generar PDF"
+        android:title="@string/generate_pdf_string"
         android:orderInCategory="99"
         android:icon="@drawable/ic_content_paste_white_36dp"
         app:showAsAction="never"/>
     <item
         android:id="@+id/action_delete_video"
-        android:title="Eliminar Video"
+        android:title="@string/delete_video_string"
         android:orderInCategory="100"
         app:showAsAction="never"/>
     <!--  <item
@@ -42,7 +42,7 @@
           app:showAsAction="never"/>-->
     <item
         android:id="@+id/action_about"
-        android:title="Acerca de"
+        android:title="@string/about_string"
         android:orderInCategory="103"
         android:icon="@drawable/ic_help_white_24dp"
         app:showAsAction="never"/>

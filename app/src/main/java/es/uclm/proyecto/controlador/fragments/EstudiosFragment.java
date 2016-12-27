@@ -87,7 +87,7 @@ public class EstudiosFragment extends Fragment   implements EstudiosAdaptador.On
                 .getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setDefaultDisplayHomeAsUpEnabled(false);
-        actionBar.setTitle("Estudios");
+        actionBar.setTitle(R.string.studies_string);
         return v;
     }
 

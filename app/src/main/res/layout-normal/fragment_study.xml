@@ -27,7 +27,7 @@
         android:layout_weight="1"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:text="ANIMAL"
+        android:text="@string/animal_string"
         android:textSize="12dp" />
 
     <TextView
@@ -36,7 +36,7 @@
         android:layout_weight="1.2"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:text="FECHA"
+        android:text="@string/header_date_string"
         android:textSize="12dp" />
 
     <TextView
@@ -46,7 +46,7 @@
         android:textColor="@android:color/black"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:text="HORA"
+        android:text="@string/header_time_string"
         android:textSize="12dp" />
     <TextView
         android:layout_width="0dp"
@@ -90,7 +90,7 @@
         android:layout_weight="2.6"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:text="INVESTIGADOR"
+        android:text="@string/header_researcher_string"
         android:textSize="12dp" />
 
     <Button

@@ -5,7 +5,7 @@
     tools:context=".controlador.MainActivity">
     <item
         android:id="@+id/action_back"
-        android:title="Añadir"
+        android:title="@string/add_string"
         android:icon="@drawable/ic_arrow_back_white_36dp"
         app:showAsAction="ifRoom"/>
     <!--  <item
@@ -15,7 +15,7 @@
           app:showAsAction="never"/>-->
     <item
         android:id="@+id/action_about"
-        android:title="Acerca de"
+        android:title="@string/about_string"
         android:icon="@drawable/ic_help_white_24dp"
         app:showAsAction="never"/>
 </menu>

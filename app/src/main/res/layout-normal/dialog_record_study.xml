@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Codigo Animal"
+                    android:text="@string/code_string"
                     android:id="@+id/tvrCodigoAnimal"
                     android:textStyle="bold" />
 
@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Especie"
+                    android:text="@string/species_string"
                     android:id="@+id/tvrEspecie"
                     android:textStyle="bold" />
 
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Fecha"
+                    android:text="@string/date_study_string"
                     android:id="@+id/tvrFecha"
                     android:textStyle="bold" />
 
@@ -126,7 +126,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Hora"
+                    android:text="@string/hour_study_string"
                     android:id="@+id/tvrHora"
                     android:textStyle="bold" />
 
@@ -158,7 +158,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Investigador 1"
+                    android:text="@string/researcher1_study"
                     android:id="@+id/tvrInvestigador1"
                     android:textStyle="bold" />
                 <Spinner
@@ -188,7 +188,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Investigador 2"
+                    android:text="@string/researcher2_study"
                     android:id="@+id/tvrInvestigador2"
                     android:textStyle="bold" />
                 <Spinner
@@ -218,7 +218,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Tipo Test"
+                    android:text="@string/test_type_string"
                     android:id="@+id/tvrTipoTest"
                     android:textStyle="bold" />
                 <Spinner

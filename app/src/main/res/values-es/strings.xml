@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="language">
+        <item>Ingles</item>
+        <item>Español</item>
+    </string-array>
     <string name="app_name">Proyecto</string>
     <string name="animals_string">Animales</string>
     <string name="action_settings">Configuración</string>
@@ -87,4 +91,19 @@
     <string name="study_detail_edit">Editar detalle del estudio</string>
     <string name="home">Inicio</string>
     <string name="home_title">BAMOS: a recording application for BAsso MOuse Scale of locomotion in experimental models of Spinal Cord Injury.</string>
+    <string name="language_string">Idioma</string>
+    <string name="apply_string">Aplicar</string>
+    <string name="animal_string">Animal</string>
+    <string name="reset_language_string">Si pulsa SI, se se reiniciara la aplicacion en el idioma seleccionado</string>
+    <string name="about_string">Acerca de</string>
+    <string name="help_string">Ayuda</string>
+    <string name="accept_string">Aceptar</string>
+    <string name="add_string">Añadir</string>
+    <string name="send_string">Enviar</string>
+    <string name="details_string">Detalles</string>
+    <string name="send_email_string">Enviar Email</string>
+    <string name="generate_pdf_string">Generar PDF</string>
+    <string name="delete_video_string">Eliminar video</string>
+    <string name="add_contact_string">Agregar contacto</string>
+    <string name="attach_video_string">Adjuntar video</string>
 </resources>

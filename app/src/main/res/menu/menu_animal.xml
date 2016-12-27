@@ -6,13 +6,13 @@
 
     <item
         android:id="@+id/action_done"
-        android:title="Aceptar"
+        android:title="@string/accept_string"
         android:icon="@drawable/ic_done_white_36dp"
         app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/action_send"
-        android:title="Enviar"
+        android:title="@string/send_string"
         android:icon="@drawable/ic_email_white_36dp"
         app:showAsAction="ifRoom"/>
     <!--  <item
@@ -22,7 +22,7 @@
           app:showAsAction="never"/>-->
     <item
         android:id="@+id/action_about"
-        android:title="Acerca de"
+        android:title="@string/about_string"
         android:icon="@drawable/ic_help_white_24dp"
         app:showAsAction="never"/>
 </menu>

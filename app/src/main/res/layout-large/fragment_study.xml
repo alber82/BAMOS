@@ -27,7 +27,7 @@
         android:layout_weight="1"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:text="ANIMAL"/>
+        android:text="@string/animal_string"/>
 
     <TextView
         android:layout_width="0dp"
@@ -35,7 +35,7 @@
         android:layout_weight="1"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:text="FECHA"/>
+        android:text="@string/header_date_string"/>
 
     <TextView
         android:layout_width="0dp"

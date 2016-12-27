@@ -29,7 +29,7 @@
             <CheckBox
                 android:layout_width="10dip"
                 android:layout_height="wrap_content"
-                android:text="Adjuntar Video"
+                android:text="@string/attach_video_string"
                 android:id="@+id/cbVideo"
                 android:layout_weight="2"
                 android:checked="false"
@@ -55,14 +55,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Nombre"
+                android:text="@string/email_animal_tv_nane"
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
             <EditText
                 android:layout_width="10dip"
                 android:layout_height="wrap_content"
                 android:id="@+id/etNombre"
-                android:hint="Nombre"
+                android:hint="@string/email_animal_et_nane"
                 android:layout_weight="2.5"
                 android:layout_gravity="center_horizontal"
                 android:textAppearance="?android:attr/textAppearanceSmall"/>
@@ -88,7 +88,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Email"
+            android:text="@string/email_animal_tv_email"
 
             android:textStyle="bold"
             android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -96,7 +96,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:hint="Email"
+            android:hint="@string/email_animal_et_email"
             android:layout_weight="2.5"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/etMail"
@@ -122,7 +122,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Asunto"
+                android:text="@string/email_animal_tv_subject"
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
             <EditText
@@ -155,7 +155,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Texto"
+            android:text="@string/email_animal_tv_text"
             android:textStyle="bold"
             android:textAppearance="?android:attr/textAppearanceSmall" />
         <EditText

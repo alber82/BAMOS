@@ -11,7 +11,7 @@
           app:showAsAction="never"/>-->
     <item
         android:id="@+id/action_about"
-        android:title="Acerca de"
+        android:title="@string/about_string"
         android:icon="@drawable/ic_help_white_24dp"
         app:showAsAction="never"/>
 </menu>

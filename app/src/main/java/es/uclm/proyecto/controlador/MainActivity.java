@@ -2,6 +2,8 @@ package es.uclm.proyecto.controlador;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Rect;
 import android.os.Environment;
 import android.support.design.widget.NavigationView;
@@ -22,6 +24,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import java.util.Locale;
+
 import es.uclm.proyecto.R;
 import es.uclm.proyecto.controlador.fragments.AnimalesFragment;
 import es.uclm.proyecto.controlador.fragments.EstudiosFragment;
@@ -40,9 +44,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences prefs = getSharedPreferences("Preferencias", Context.MODE_PRIVATE);
+
+        String languageToLoad  = prefs.getString("idioma", Locale.getDefault().getLanguage());
+
+        //Toast.makeText(getApplicationContext(),Locale.getDefault().getLanguage(),Toast.LENGTH_SHORT).show();
+
+        //String languageToLoad  = "es"; // your language
+        Locale locale = new Locale(languageToLoad);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
+
         setContentView(R.layout.activity_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
 
        /* File dir = new File(getApplicationInfo().dataDir + "files/temp/");
         if (dir.isDirectory())
@@ -85,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (menuItem.getItemId()){
                     case R.id.home:
-                        Toast.makeText(getApplicationContext(),"Inicio seleccionado",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),"Inicio seleccionado",Toast.LENGTH_SHORT).show();
                         Log.d(getApplicationContext().getFilesDir().getAbsolutePath(), getApplicationInfo().dataDir);
                         HomeFragment HomeFragment = new HomeFragment();
                         fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -99,14 +116,14 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransaction.commit();
                         return true;
                     case R.id.studies:
-                        Toast.makeText(getApplicationContext(),"Estudios seleccionado",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),"Estudios seleccionado",Toast.LENGTH_SHORT).show();
                         EstudiosFragment EstudiosFragment = new EstudiosFragment();
                         fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.frame,EstudiosFragment);
                         fragmentTransaction.commit();
                         return true;
                     case R.id.settings:
-                        Toast.makeText(getApplicationContext(),"Configuracion",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),"Configuracion",Toast.LENGTH_SHORT).show();
                         SettingFragment SettingFragment = new SettingFragment();
                         fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.frame, SettingFragment);

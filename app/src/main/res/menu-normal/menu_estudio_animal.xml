@@ -5,27 +5,27 @@
     tools:context=".controlador.MainActivity">
     <item
         android:id="@+id/action_back"
-        android:title="Añadir"
+        android:title="@string/add_string"
         android:icon="@drawable/ic_arrow_back_white_36dp"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/action_record_estudio"
-        android:title="Añadir"
+        android:title="@string/add_string"
         android:icon="@drawable/ic_videocam_white_36dp"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/action_add_estudio"
-        android:title="Añadir"
+        android:title="@string/add_string"
         android:icon="@drawable/ic_add_white_36dp"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/action_help"
-        android:title="Ayuda"
+        android:title="@string/help_string"
         android:icon="@drawable/ic_help_white_24dp"
         app:showAsAction="never"/>
     <item
         android:id="@+id/action_about"
-        android:title="Acerca de"
+        android:title="@string/about_string"
         android:icon="@drawable/ic_help_white_24dp"
         app:showAsAction="never"/>
 </menu>
