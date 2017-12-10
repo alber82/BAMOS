@@ -123,13 +123,14 @@
 
             <Spinner
                 android:id="@+id/spSexo"
-                android:layout_width="0dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:entries="@array/sexo"
                 android:spinnerMode="dropdown"
 
                 />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
