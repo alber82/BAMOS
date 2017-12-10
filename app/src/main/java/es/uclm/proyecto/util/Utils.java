@@ -95,7 +95,7 @@ public class Utils {
         String lol="";
         String lor="";
 
-        if (resultado.pp_ic_l.equals("I") || resultado.pp_ic_l.equals("E") || resultado.pp_ic_l.equals("R")) icl="R";
+        if (resultado.pp_ic_l.equals("I") || resultado.pp_ic_l.equals("E") || resultado.pp_ic_l.equals("R")) icl="R" ;
         if (resultado.pp_ic_r.equals("I") || resultado.pp_ic_r.equals("E") || resultado.pp_ic_r.equals("R")) icr="R";
         if (resultado.pp_lo_l.equals("I") || resultado.pp_lo_l.equals("E") || resultado.pp_lo_l.equals("R")) lol="R";
         if (resultado.pp_lo_r.equals("I") || resultado.pp_lo_r.equals("E") || resultado.pp_lo_r.equals("R")) lor="R";
@@ -107,6 +107,9 @@ public class Utils {
                 puntos = 2;
             else if (resultado.sp_l.equals("Ø")) puntos = 3;
             else if (resultado.sp_l.equals("O")) puntos = 4;
+            else if ((resultado.sp_l.equals("F") || resultado.sp_l.equals("C")) && (resultado.coord.equals("SOME") || resultado.coord.equals("MOST"))
+                            && (icl == "" || lol == ""  ))
+                     puntos = 4;
             else if (((resultado.sp_l.equals("F") || resultado.sp_l.equals("C")) && resultado.coord.equals("Ø")) ||
                     ((resultado.sp_l.equals("F") || resultado.sp_l.equals("C")) && resultado.coord.equals("SOME")
                             && (icl == "R") && (lol == "R" || resultado.pp_lo_l.equals("P") ))
@@ -140,6 +143,9 @@ public class Utils {
                 puntos = 2;
             else if (resultado.sp_r.equals("Ø")) puntos = 3;
             else if (resultado.sp_r.equals("O")) puntos = 4;
+            else if ((resultado.sp_r.equals("F") || resultado.sp_r.equals("C")) && (resultado.coord.equals("SOME") || resultado.coord.equals("MOST"))
+                    && (icr == "" || lor == ""  ))
+                puntos = 4;
             else if (((resultado.sp_r.equals("F") || resultado.sp_r.equals("C")) && resultado.coord.equals("Ø")) ||
                     ((resultado.sp_r.equals("F") || resultado.sp_r.equals("C")) && resultado.coord.equals("SOME")
                             && (icr == "R") && (lor == "R" || resultado.pp_lo_r.equals("P") ))
