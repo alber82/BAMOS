@@ -1,5 +1,6 @@
 package es.uclm.proyecto.controlador.dialog;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
@@ -77,6 +78,7 @@ public class EstudiosDialogRecord extends Fragment implements View.OnClickListen
 
     }
 
+    @SuppressLint("ValidFragment")
     public EstudiosDialogRecord(String animalId){
     this.animalId = animalId;
     }
@@ -235,9 +237,9 @@ public class EstudiosDialogRecord extends Fragment implements View.OnClickListen
                 break;
             case R.id.action_back:
                 alertDialog = new android.app.AlertDialog.Builder(getActivity());
-                alertDialog.setTitle("Atencion");
-                alertDialog.setMessage("En caso de pulsar SI regresara a la pantalla de seleccion de animales");
-                alertDialog.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                alertDialog.setTitle(R.string.dialog_warning);
+                alertDialog.setMessage(R.string.return_animal_string);
+                alertDialog.setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
 
 
@@ -249,7 +251,7 @@ public class EstudiosDialogRecord extends Fragment implements View.OnClickListen
 
                     }
                 });
-                alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                alertDialog.setNegativeButton(R.string.dialog_no, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         //EJEMPLO TOAST   -- Toast.makeText(contexto.getApplicationContext(), "You clicked on NO", Toast.LENGTH_SHORT).show();
                         dialog.cancel();
@@ -300,9 +302,9 @@ public class EstudiosDialogRecord extends Fragment implements View.OnClickListen
 
 
                 alertDialog = new android.app.AlertDialog.Builder(getActivity());
-                alertDialog.setTitle("Nuevo Estudio");
-                alertDialog.setMessage("Son correctos los datos del nuevo estudio?");
-                alertDialog.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                alertDialog.setTitle(R.string.new_study_string);
+                alertDialog.setMessage(R.string.study_correct_string);
+                alertDialog.setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         RecordFragment RecordFragment = new RecordFragment(animalId,estudio);
                         android.support.v4.app.FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
@@ -311,7 +313,7 @@ public class EstudiosDialogRecord extends Fragment implements View.OnClickListen
 
                     }
                 });
-                alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                alertDialog.setNegativeButton(R.string.dialog_no, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         //EJEMPLO TOAST   -- Toast.makeText(contexto.getApplicationContext(), "You clicked on NO", Toast.LENGTH_SHORT).show();
                         dialog.cancel();

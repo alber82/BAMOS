@@ -155,5 +155,20 @@
     <string name="delete_video_string">Delete video</string>
     <string name="add_contact_string">Add contact</string>
     <string name="attach_video_string">Attach video</string>
+    <string name="recording_string">Recording</string>
+    <string name="video_recorded">The video has already been recorded</string>
+    <string name="registry_correct_string">Registry inserted correctly</string>
+    <string name="must_record_string">You must record the video before saving the study</string>
+    <string name="study_saved_string">The study has already been saved</string>
+    <string name="recording_lost_string">If you press YES, the recording will be lost and you will return to the animal selection screen</string>
+    <string name="access_study_string">If you press YES, you will access the detail of the saved study</string>
+    <string name="no_video_recorded_string">You have not recorded the video, pressing YES, you will go back to the animal selection menu</string>
+    <string name="no_study_saved_string">You have not saved the study, by pressing YES, you will go back to the animal selection menu</string>
+    <string name="return_animal_string">In case of pressing YES you will return to the animal selection screen</string>
+    <string name="new_study_string">New study</string>
+    <string name="study_correct_string">Are the new study data correct?</string>
+    <string name="minutes_string">min</string>
+    <string name="second_string">sec</string>
+    <string name="stop_string">Stop</string>
 
 </resources>
