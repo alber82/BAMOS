@@ -2,7 +2,9 @@ package es.uclm.proyecto.controlador.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Camera;
 import android.graphics.Canvas;
@@ -105,6 +107,7 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
         this.idAnimal = idAnimal;
     }
 
+    @SuppressLint("ValidFragment")
     public RecordFragment(String idAnimal, Estudio estudio) {
         this.idAnimal = idAnimal;
         this.estudio = estudio;
@@ -260,7 +263,12 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
                         btnParar.setVisibility(View.VISIBLE);
                         recording = true;
                         recorder.start();
-                        new CountDownTimer(40000, 1000) {
+
+                        SharedPreferences prefs = getActivity().getSharedPreferences("Preferencias", Context.MODE_PRIVATE);
+                        String timePreference = prefs.getString("time","240");
+                        int timeInt = Integer.parseInt(timePreference) * 1000;
+
+                        new CountDownTimer(timeInt, 1000) {
                             public void onTick(long millisUntilFinished) {
                                 contador.setText("" + String.format("%d min, %d sec",
                                         TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),

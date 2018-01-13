@@ -36,4 +36,36 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:entries="@array/language"/>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/time_string" />
+
+    <Button
+        android:text="@string/apply_string"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="65dp"
+        android:id="@+id/bttime" />
+
+    <EditText
+        android:id="@+id/etsTiempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView19"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@+id/textView19"
+        android:inputType="number"
+        android:textSize="14sp"
+        tools:layout_toLeftOf="@+id/bttime" />
 </RelativeLayout>

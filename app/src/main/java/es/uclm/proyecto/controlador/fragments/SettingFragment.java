@@ -17,12 +17,14 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.util.Locale;
 
 import es.uclm.proyecto.R;
 
+import static es.uclm.proyecto.R.id.etsTiempo;
 import static es.uclm.proyecto.R.id.spEspecies;
 
 /**
@@ -32,6 +34,9 @@ public class SettingFragment extends Fragment implements View.OnClickListener{
 
     private Spinner splanguage;
     private Button btlanguage;
+    private EditText etTime;
+    private Button bttime;
+
     public void onCreate(Bundle savedInstanceState) {
 
         // Fragment locked in landscape screen orientation
@@ -42,10 +47,15 @@ public class SettingFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_setting,container,false);
-
+        SharedPreferences prefs = getActivity().getSharedPreferences("Preferencias", Context.MODE_PRIVATE);
+        String timePreference = prefs.getString("time","240");
 
         splanguage = (Spinner) v.findViewById(R.id.splanguage);
         btlanguage = (Button) v.findViewById(R.id.btlanguage);
+
+        etTime = (EditText) v.findViewById(R.id.etsTiempo);
+        bttime = (Button) v.findViewById(R.id.bttime);
+        etTime.setText(timePreference);
 
         ArrayAdapter<CharSequence> aalanguage= ArrayAdapter.createFromResource(
                 getActivity().getApplicationContext(), R.array.language, R.layout.simple_spinner_item_perso);
@@ -54,6 +64,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener{
         splanguage.setSelection(aalanguage.getPosition(""));
 
         btlanguage.setOnClickListener(this);
+        bttime.setOnClickListener(this);
 
         setHasOptionsMenu(true);
         ActionBar actionBar = ((AppCompatActivity) getActivity())
@@ -99,6 +110,36 @@ public class SettingFragment extends Fragment implements View.OnClickListener{
                         }
                     });
                     alertDialog.show();
+            case R.id.bttime:
+
+                alertDialog = new android.app.AlertDialog.Builder(getActivity());
+                alertDialog.setTitle(R.string.dialog_warning);
+                alertDialog.setMessage(R.string.reset_language_string);
+                alertDialog.setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        String time ="";
+                        time=  etTime.getText().toString();
+                        if (time.equals("")) time = "240";
+
+                        SharedPreferences prefs = getActivity().getSharedPreferences("Preferencias", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = prefs.edit();
+                        editor.putString("time",time);
+                        editor.commit();
+
+                        Intent i = getActivity().getBaseContext().getPackageManager()
+                                .getLaunchIntentForPackage(getActivity().getBaseContext().getPackageName());
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(i);
+
+
+                    }
+                });
+                alertDialog.setNegativeButton(R.string.dialog_no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                alertDialog.show();
 
             default:
                 break;

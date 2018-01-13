@@ -121,4 +121,7 @@
     <string name="minutes_string">min</string>
     <string name="second_string">seg</string>
     <string name="stop_string">Parar</string>
+    <string name="time_string">Duración</string>
+    <string name="exit_confirm_string">¿Esta seguro de que desea salir?</string>
+    <string name="duration_language_string">Si pulsa SI, se se reiniciara la aplicacion con la duración seleccionada en segundos</string>
 </resources>

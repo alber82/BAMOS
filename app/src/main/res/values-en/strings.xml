@@ -121,4 +121,7 @@
     <string name="minutes_string">min</string>
     <string name="second_string">sec</string>
     <string name="stop_string">Stop</string>
+    <string name="time_string">Duration</string>
+    <string name="exit_confirm_string">Are you sure you want to exit?</string>
+    <string name="duration_language_string">If press YES,  the app will be reset with selected duration in seconds</string>
 </resources>
