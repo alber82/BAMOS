@@ -27,6 +27,7 @@ import android.widget.Button;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
 import es.uclm.proyecto.R;
+import es.uclm.proyecto.controlador.dialog.DialogAbout;
 import es.uclm.proyecto.controlador.dialog.EstudiosDialogAdd;
 import es.uclm.proyecto.sqlite.ContratoBBDD;
 import es.uclm.proyecto.controlador.adaptador.EstudiosAnimalesAdaptador;
@@ -135,6 +136,12 @@ public class AnimalesEstudiosFragment extends Fragment   implements EstudiosAnim
                 FragmentTransaction fragmentTransaction = activity.getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.frame, AnimalFragment);
                 fragmentTransaction.commit();
+                return true;
+            }
+            if (id == R.id.action_about) {
+                android.support.v4.app.FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                DialogAbout dialogAbout= new DialogAbout();
+                dialogAbout.show(fragmentTransaction, "fragment_alert");
                 return true;
             }
 

@@ -107,6 +107,7 @@ public class AnimalesDialogAdd extends DialogFragment implements View.OnClickLis
         cEspecies.close();
 
 
+        setHasOptionsMenu(true);
 
         ActionBar actionBar = ((AppCompatActivity) getActivity())
                 .getSupportActionBar();
@@ -169,6 +170,11 @@ public class AnimalesDialogAdd extends DialogFragment implements View.OnClickLis
                                 window.dismiss();
                             }
                             break;
+                        case R.id.action_about:
+                            android.support.v4.app.FragmentTransaction fragmentTransaction1 = getActivity().getSupportFragmentManager().beginTransaction();
+                            DialogAbout dialogAbout= new DialogAbout();
+                            dialogAbout.show(fragmentTransaction1, "fragment_alert");
+                            break;
                     }
                     return true;
                 }
@@ -211,7 +217,7 @@ public class AnimalesDialogAdd extends DialogFragment implements View.OnClickLis
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        //inflater.inflate(R.menu.fullscreen_dialog, menu);
+        //inflater.inflate(R.menu.d, menu);
 
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -221,6 +227,12 @@ public class AnimalesDialogAdd extends DialogFragment implements View.OnClickLis
         int id = item.getItemId();
 
         switch (id) {
+            case R.id.action_about:
+
+                android.support.v4.app.FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                DialogAbout dialogAbout= new DialogAbout();
+                dialogAbout.show(fragmentTransaction, "fragment_alert");
+                break;
             case android.R.id.home:
                 // procesarDescartar()
                 break;

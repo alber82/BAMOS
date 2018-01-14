@@ -37,7 +37,6 @@ import android.widget.TimePicker;
 import android.widget.VideoView;
 
 import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.pdf.parser.Line;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -147,16 +146,8 @@ public class EstudiosDialogEdit extends Fragment implements View.OnClickListener
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //setStyle(DialogFragment.STYLE_NO_FRAME, R.style.Theme_AppCompat_Light_DarkActionBar);
-        //android.R.style.Theme_Holo_Light_DarkActionBar);
-
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View v = inflater.inflate(R.layout.dialog_edit_study, null);
-/*
-
-        Bundle argumentos = getArguments();
-        studyId = argumentos.getString("_id");
-        Log.d("argumento", studyId);*/
 
         Cursor cEstudioResultado = getActivity().getContentResolver().query(ContratoBBDD.Estudios.crearUriParaResultados(studyId), null, null, null, null);
 
@@ -249,7 +240,7 @@ public class EstudiosDialogEdit extends Fragment implements View.OnClickListener
         setHasOptionsMenu(true);
         ActionBar actionBar = ((AppCompatActivity) getActivity())
                 .getSupportActionBar();
-        actionBar.setTitle(R.string.animal_study_add);
+        actionBar.setTitle(R.string.animal_study_edit);
     }
 
     @Override
@@ -574,6 +565,11 @@ public class EstudiosDialogEdit extends Fragment implements View.OnClickListener
                         ,estudioScoreL,estudioScoreR,estudioResultado, animalExperimento,animalOrigen,estudioComentarios);
                 pdfDialog.setArguments(args);
                 pdfDialog.show(fragmentTransaction, "fragment_alert");
+                break;
+
+            case R.id.action_about:
+                DialogAbout dialogAbout= new DialogAbout();
+                dialogAbout.show(fragmentTransaction, "fragment_alert");
                 break;
 
             case R.id.action_email:

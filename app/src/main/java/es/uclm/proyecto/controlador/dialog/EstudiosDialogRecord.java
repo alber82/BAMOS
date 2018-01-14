@@ -235,6 +235,11 @@ public class EstudiosDialogRecord extends Fragment implements View.OnClickListen
             case android.R.id.home:
                 // procesarDescartar()
                 break;
+            case R.id.action_about:
+                android.support.v4.app.FragmentTransaction fragmentTransaction1 = getActivity().getSupportFragmentManager().beginTransaction();
+                DialogAbout dialogAbout= new DialogAbout();
+                dialogAbout.show(fragmentTransaction1, "fragment_alert");
+                break;
             case R.id.action_back:
                 alertDialog = new android.app.AlertDialog.Builder(getActivity());
                 alertDialog.setTitle(R.string.dialog_warning);

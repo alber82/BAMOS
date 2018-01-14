@@ -136,7 +136,11 @@ public class AnimalDialogEmail extends DialogFragment implements View.OnClickLis
                             Intent contactPickerIntent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
                             startActivityForResult(contactPickerIntent, CONTACT_PICKER_RESULT);
                             break;
-
+                        case R.id.action_about:
+                            android.support.v4.app.FragmentTransaction fragmentTransaction1 = getActivity().getSupportFragmentManager().beginTransaction();
+                            DialogAbout dialogAbout= new DialogAbout();
+                            dialogAbout.show(fragmentTransaction1, "fragment_alert");
+                            break;
                         case R.id.action_done:
 
                             if (mWifi.isConnected()) {

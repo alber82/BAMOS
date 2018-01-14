@@ -43,6 +43,7 @@ import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 import es.uclm.proyecto.R;
+import es.uclm.proyecto.controlador.dialog.DialogAbout;
 import es.uclm.proyecto.controlador.dialog.EstudiosDialogEdit;
 import es.uclm.proyecto.controlador.dialog.EstudiosDialogRecord;
 import es.uclm.proyecto.modelo.Estudio;
@@ -308,6 +309,11 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
 
                 }
                 return true;
+            case R.id.action_about:
+                android.support.v4.app.FragmentTransaction fragmentTransaction1 = getActivity().getSupportFragmentManager().beginTransaction();
+                DialogAbout dialogAbout= new DialogAbout();
+                dialogAbout.show(fragmentTransaction1, "fragment_alert");
+                break;
 
             case R.id.action_done:
                 if (!recording && grabado == 1 && guardado == 0) {

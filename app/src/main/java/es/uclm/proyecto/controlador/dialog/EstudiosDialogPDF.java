@@ -103,7 +103,8 @@ public class EstudiosDialogPDF extends DialogFragment implements View.OnClickLis
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState)
+    {
         InputMethodManager imm = (InputMethodManager) getActivity().getApplicationContext().getSystemService(Activity.INPUT_METHOD_SERVICE);
         View view = inflater.inflate(R.layout.dialog_pdf_study, container, false);
         pdfView = (ImageView) view.findViewById(R.id.PDFView);
