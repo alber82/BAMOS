@@ -106,4 +106,22 @@
     <string name="delete_video_string">Eliminar video</string>
     <string name="add_contact_string">Agregar contacto</string>
     <string name="attach_video_string">Adjuntar video</string>
+    <string name="recording_string">Grabación</string>
+    <string name="video_recorded">El video ya se ha grabado</string>
+    <string name="registry_correct_string">Registro insertado correctamente</string>
+    <string name="must_record_string">Debe grabar el video antes de guardar el estudio</string>
+    <string name="study_saved_string">El estudio ya ha sido guardado</string>
+    <string name="recording_lost_string">Si pulsa SI, se perdera la grabacion la grabacion y volvera a la pantalla de seleccion de animales</string>
+    <string name="access_study_string">Si pulsa SI, accedera al detalle del estudio guardado</string>
+    <string name="no_video_recorded_string">No ha grabado el video, pulsando SI, volverá al menu de selección de animales</string>
+    <string name="no_study_saved_string">No ha guardado el estudio, pulsando SI, volvera al menu de seleccción de animales</string>
+    <string name="return_animal_string">En caso de pulsar SI regresara a la pantalla de seleccion de animales</string>
+    <string name="new_study_string">Nuevo estudio</string>
+    <string name="study_correct_string">¿Son correctos los datos del nuevo estudio?</string>
+    <string name="minutes_string">min</string>
+    <string name="second_string">seg</string>
+    <string name="stop_string">Parar</string>
+    <string name="time_string">Duración</string>
+    <string name="exit_confirm_string">¿Esta seguro de que desea salir?</string>
+    <string name="duration_language_string">Si pulsa SI, se se reiniciara la aplicacion con la duración seleccionada en segundos</string>
 </resources>

@@ -25,6 +25,7 @@ import android.widget.Button;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
 import es.uclm.proyecto.R;
+import es.uclm.proyecto.controlador.dialog.DialogAbout;
 import es.uclm.proyecto.controlador.dialog.EstudiosDialogAdd;
 import es.uclm.proyecto.sqlite.ContratoBBDD;
 import es.uclm.proyecto.controlador.adaptador.EstudiosAdaptador;
@@ -114,7 +115,12 @@ public class EstudiosFragment extends Fragment   implements EstudiosAdaptador.On
             return true;
         }
 
-
+        if (id == R.id.action_about) {
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+            DialogAbout dialogAbout= new DialogAbout();
+            dialogAbout.show(fragmentTransaction, "fragment_alert");
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

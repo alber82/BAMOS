@@ -186,6 +186,11 @@ public class AnimalesDialogEdit extends DialogFragment implements View.OnClickLi
                             emailDialog.setArguments(args);
                             emailDialog.show(fragmentTransaction, "fragment_email");
                             break;
+                        case R.id.action_about:
+                            android.support.v4.app.FragmentTransaction fragmentTransaction1 = getActivity().getSupportFragmentManager().beginTransaction();
+                            DialogAbout dialogAbout= new DialogAbout();
+                            dialogAbout.show(fragmentTransaction1, "fragment_alert");
+                            break;
                     }
                     return true;
                 }

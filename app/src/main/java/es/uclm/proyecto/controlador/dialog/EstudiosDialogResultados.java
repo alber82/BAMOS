@@ -84,6 +84,8 @@ public class EstudiosDialogResultados extends DialogFragment implements View.OnC
         studyId = argumentos.getString("_id");
         Log.d("argumento", studyId);
 
+        setHasOptionsMenu(true);
+
         ActionBar actionBar = ((AppCompatActivity) getActivity())
                 .getSupportActionBar();
         //actionBar.setDisplayHomeAsUpEnabled(false);
@@ -226,10 +228,18 @@ public class EstudiosDialogResultados extends DialogFragment implements View.OnC
                         case R.id.action_done:
                             actualizarResultados();
                             break;
+                        case R.id.action_about:
+                            android.support.v4.app.FragmentTransaction fragmentTransaction1 = getActivity().getSupportFragmentManager().beginTransaction();
+                            DialogAbout dialogAbout= new DialogAbout();
+                            dialogAbout.show(fragmentTransaction1, "fragment_alert");
+                            break;
                     }
+
                     return true;
+
                 }
             });
+
         }
 
         setHasOptionsMenu(true);
@@ -244,6 +254,7 @@ public class EstudiosDialogResultados extends DialogFragment implements View.OnC
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         //inflater.inflate(R.menu.fullscreen_dialog, menu);
 
+        inflater.inflate(R.menu.menu_detalles_estudio, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -255,7 +266,12 @@ public class EstudiosDialogResultados extends DialogFragment implements View.OnC
             case android.R.id.home:
                 // procesarDescartar()
                 break;
+            case R.id.action_about:
 
+                android.support.v4.app.FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                DialogAbout dialogAbout= new DialogAbout();
+                dialogAbout.show(fragmentTransaction, "fragment_alert");
+                break;
 
         }
 

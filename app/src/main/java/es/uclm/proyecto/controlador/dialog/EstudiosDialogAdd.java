@@ -176,10 +176,11 @@ public class EstudiosDialogAdd extends DialogFragment implements View.OnClickLis
         }
         cInvestigadores.close();
 
-    ActionBar actionBar = ((AppCompatActivity) getActivity())
-            .getSupportActionBar();
-//    actionBar.setDisplayHomeAsUpEnabled(false);
-//    actionBar.setDefaultDisplayHomeAsUpEnabled(false);
+        setHasOptionsMenu(true);
+        ActionBar actionBar = ((AppCompatActivity) getActivity())
+                .getSupportActionBar();
+        actionBar.setTitle(R.string.animal_study_add);
+
 
 }
 
@@ -253,6 +254,11 @@ public class EstudiosDialogAdd extends DialogFragment implements View.OnClickLis
                             window.dismiss();
 
                             break;
+                        case R.id.action_about:
+                            android.support.v4.app.FragmentTransaction fragmentTransaction1 = getActivity().getSupportFragmentManager().beginTransaction();
+                            DialogAbout dialogAbout= new DialogAbout();
+                            dialogAbout.show(fragmentTransaction1, "fragment_alert");
+                            break;
                     }
                     return true;
                 }
@@ -323,12 +329,14 @@ public class EstudiosDialogAdd extends DialogFragment implements View.OnClickLis
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         //inflater.inflate(R.menu.fullscreen_dialog, menu);
+        inflater.inflate(R.menu.menu_add,menu);
 
         super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         int id = item.getItemId();
 
         switch (id) {
@@ -338,6 +346,7 @@ public class EstudiosDialogAdd extends DialogFragment implements View.OnClickLis
             case R.id.action_add_animal:
                 Log.d(" Botonzaco de arriba","");
                 break;
+
 
         }
 

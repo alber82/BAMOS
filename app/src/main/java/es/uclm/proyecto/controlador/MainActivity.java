@@ -61,18 +61,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-       /* File dir = new File(getApplicationInfo().dataDir + "files/temp/");
-        if (dir.isDirectory())
-        {
-            String[] children = dir.list();
-            for (int i = 0; i < children.length; i++)
-            {
-                new File(dir, children[i]).delete();
-            }
-        }
-            File storageDir = new File(getApplicationInfo().dataDir + "files/temp/");
-            storageDir.mkdir();
-*/
         android.support.v4.app.FragmentTransaction ft;
         HomeFragment HomeFragment = new HomeFragment();
         ft = getSupportFragmentManager().beginTransaction();
@@ -213,10 +201,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
-                .setTitle("Desea salir?")
+                .setTitle(R.string.dialog_exit)
                 .setMessage("¿Esta seguro de que desea salir?")
-                .setNegativeButton("No", null)
-                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.dialog_no, null)
+                .setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface arg0, int arg1) {
                         MainActivity.super.onBackPressed();

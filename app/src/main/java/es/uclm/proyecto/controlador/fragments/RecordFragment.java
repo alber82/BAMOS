@@ -2,7 +2,9 @@ package es.uclm.proyecto.controlador.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Camera;
 import android.graphics.Canvas;
@@ -41,6 +43,7 @@ import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 import es.uclm.proyecto.R;
+import es.uclm.proyecto.controlador.dialog.DialogAbout;
 import es.uclm.proyecto.controlador.dialog.EstudiosDialogEdit;
 import es.uclm.proyecto.controlador.dialog.EstudiosDialogRecord;
 import es.uclm.proyecto.modelo.Estudio;
@@ -100,10 +103,12 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
 
     }
 
+    @SuppressLint("ValidFragment")
     public RecordFragment(String idAnimal) {
         this.idAnimal = idAnimal;
     }
 
+    @SuppressLint("ValidFragment")
     public RecordFragment(String idAnimal, Estudio estudio) {
         this.idAnimal = idAnimal;
         this.estudio = estudio;
@@ -189,7 +194,7 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
                 .getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setDefaultDisplayHomeAsUpEnabled(false);
-        actionBar.setTitle("Grabacion");
+        actionBar.setTitle(R.string.recording_string);
 
 
         return v;
@@ -259,9 +264,14 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
                         btnParar.setVisibility(View.VISIBLE);
                         recording = true;
                         recorder.start();
-                        new CountDownTimer(40000, 1000) {
+
+                        SharedPreferences prefs = getActivity().getSharedPreferences("Preferencias", Context.MODE_PRIVATE);
+                        String timePreference = prefs.getString("time","240");
+                        int timeInt = Integer.parseInt(timePreference) * 1000;
+
+                        new CountDownTimer(timeInt, 1000) {
                             public void onTick(long millisUntilFinished) {
-                                contador.setText("" + String.format("%d min, %d seg",
+                                contador.setText("" + String.format("%d min, %d sec",
                                         TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
                                         TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) -
                                                 TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
@@ -284,10 +294,10 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
                         }.start();
                     } else if (grabado == 1) {
                         new AlertDialog.Builder(getActivity())
-                                .setTitle("Atencion")
-                                .setMessage("El video ya se ha grabado")
+                                .setTitle(R.string.dialog_warning)
+                                .setMessage(R.string.video_recorded)
                                 .setCancelable(false)
-                                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                .setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
 
@@ -299,6 +309,11 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
 
                 }
                 return true;
+            case R.id.action_about:
+                android.support.v4.app.FragmentTransaction fragmentTransaction1 = getActivity().getSupportFragmentManager().beginTransaction();
+                DialogAbout dialogAbout= new DialogAbout();
+                dialogAbout.show(fragmentTransaction1, "fragment_alert");
+                break;
 
             case R.id.action_done:
                 if (!recording && grabado == 1 && guardado == 0) {
@@ -408,10 +423,10 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
 
                     Log.d("A", _id);
                     new AlertDialog.Builder(getActivity())
-                            .setTitle("Atencion")
-                            .setMessage("Registro insertado correctamente")
+                            .setTitle(R.string.dialog_warning)
+                            .setMessage(R.string.registry_correct_string)
                             .setCancelable(false)
-                            .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
 
@@ -420,10 +435,10 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
 
                 } else if (!recording && grabado == 0) {
                     new AlertDialog.Builder(getActivity())
-                            .setTitle("Atencion")
-                            .setMessage("Debe grabar el video antes de guardar el estudio")
+                            .setTitle(R.string.dialog_warning)
+                            .setMessage(R.string.must_record_string)
                             .setCancelable(false)
-                            .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
 
@@ -431,8 +446,8 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
                             }).create().show();
                 } else if (!recording && grabado == 1 && guardado == 1) {
                     new AlertDialog.Builder(getActivity())
-                            .setTitle("Atencion")
-                            .setMessage("El estudio ya ha sido guardado")
+                            .setTitle(R.string.dialog_warning)
+                            .setMessage(R.string.study_saved_string)
                             .setCancelable(false)
                             .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                                 @Override
@@ -445,11 +460,11 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
             case R.id.action_back:
                 if (!recording) {
                     alertDialog = new android.app.AlertDialog.Builder(getActivity());
-                    alertDialog.setTitle("Atencion");
+                    alertDialog.setTitle(R.string.dialog_warning);
 
                     if (grabado == 0) {
-                        alertDialog.setMessage("No ha grabado el video, pulsando SI, volvera al menu de selecion de animales");
-                        alertDialog.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                        alertDialog.setMessage(R.string.no_video_recorded_string);
+                        alertDialog.setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 //BORRAR EL VIDEO
                                 AnimalesFragment AnimalFragment = new AnimalesFragment();
@@ -458,7 +473,7 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
                                 fragmentTransaction.commit();
                             }
                         });
-                        alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                        alertDialog.setNegativeButton(R.string.dialog_no, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 //EJEMPLO TOAST   -- Toast.makeText(contexto.getApplicationContext(), "You clicked on NO", Toast.LENGTH_SHORT).show();
                                 dialog.cancel();
@@ -468,8 +483,8 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
                     } else {
                         if (guardado == 0) {
 
-                            alertDialog.setMessage("No ha guardado el estudio, pulsando SI, volvera al menu de selecccion de animales");
-                            alertDialog.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                            alertDialog.setMessage(R.string.no_study_saved_string);
+                            alertDialog.setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     //BORRAR EL VIDEO
                                     outfile.delete();
@@ -479,7 +494,7 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
                                     fragmentTransaction.commit();
                                 }
                             });
-                            alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                            alertDialog.setNegativeButton(R.string.dialog_no, new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     //EJEMPLO TOAST   -- Toast.makeText(contexto.getApplicationContext(), "You clicked on NO", Toast.LENGTH_SHORT).show();
                                     dialog.cancel();
@@ -487,8 +502,8 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
                             });
                             alertDialog.show();
                         } else {
-                            alertDialog.setMessage("Si pulsa SI, accedera al detalle del estudio guardado");
-                            alertDialog.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                            alertDialog.setMessage(R.string.access_study_string);
+                            alertDialog.setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     if (_id == null){
                                         AnimalesFragment AnimalFragment = new AnimalesFragment();
@@ -504,7 +519,7 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
                                     }
                                 }
                             });
-                            alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                            alertDialog.setNegativeButton(R.string.dialog_no, new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     //EJEMPLO TOAST   -- Toast.makeText(contexto.getApplicationContext(), "You clicked on NO", Toast.LENGTH_SHORT).show();
                                     dialog.cancel();
@@ -547,9 +562,9 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
             case R.id.btnCaptureVideo:
                 if (recording) {
                     alertDialog = new android.app.AlertDialog.Builder(getActivity());
-                    alertDialog.setTitle("Atencion");
-                    alertDialog.setMessage("Si pulsa SI, se perdera la grabacion la grabacion y volvera a la pantalla de seleccion de animales");
-                    alertDialog.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                    alertDialog.setTitle(R.string.dialog_warning);
+                    alertDialog.setMessage(R.string.recording_lost_string);
+                    alertDialog.setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             recorder.stop();
                             recorder.release();
@@ -569,7 +584,7 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
 
                         }
                     });
-                    alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    alertDialog.setNegativeButton(R.string.dialog_no, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             //EJEMPLO TOAST   -- Toast.makeText(contexto.getApplicationContext(), "You clicked on NO", Toast.LENGTH_SHORT).show();
                             dialog.cancel();
@@ -605,10 +620,4 @@ public class RecordFragment extends Fragment implements View.OnClickListener, Su
         }
     }
 
-
-
-  /*  @Override
-    public void onFinishEditDialog(Estudio estudio) {
-        this.estudio = estudio;
-    }*/
 }

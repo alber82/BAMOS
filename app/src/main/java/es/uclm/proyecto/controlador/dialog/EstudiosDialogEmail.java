@@ -90,10 +90,6 @@ public class EstudiosDialogEmail extends DialogFragment implements View.OnClickL
             cEstudioPDF.moveToNext();
         }
         cEstudioPDF.close();
-/*
-        Bundle argumentos = getArguments();
-        studyId = argumentos.getString("_id");
-        Log.d("argumento", studyId);*/
 
         ActionBar actionBar = ((AppCompatActivity) getActivity())
                 .getSupportActionBar();
@@ -165,6 +161,11 @@ public class EstudiosDialogEmail extends DialogFragment implements View.OnClickL
 
                             }
 
+                            break;
+                        case R.id.action_about:
+                            android.support.v4.app.FragmentTransaction fragmentTransaction1 = getActivity().getSupportFragmentManager().beginTransaction();
+                            DialogAbout dialogAbout= new DialogAbout();
+                            dialogAbout.show(fragmentTransaction1, "fragment_alert");
                             break;
                     }
                     return true;
